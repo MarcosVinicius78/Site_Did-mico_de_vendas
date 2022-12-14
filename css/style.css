@@ -251,34 +251,60 @@ figcaption{
 }
 
 /*estilizando o footer*/
+
+/*
+    Nessa estilização do footer, precisamos dar um clear: both, pois os elementos anteriores estão 
+    flutuando, então o bloco do footer, vai até onde encontra outro bloco, dentro do footer, vamos
+    dar um espaçamento de 20px, e colocar uma imagem de fundo.
+*/
 footer{
     clear: both;
     padding: 20px 0;
     background-image: url(../img/fundo-rodape.png);
 }
+
+/*
+    nessa classe container, vai ser onde as imagens e icones vão ficar, então deixamos ela com
+    a posição relativa, pois a posição dos elemtos filhos podem ser relativa.
+*/
 footer .container{
     position: relative;
 }
 
+/*
+    nessa classe social, é a classe onde fica os icones de rede social e vamos deixa-la absoluta
+    pois queremos move-la para o canto dreito, com o position: absolute, top 12, para dar um espaço de
+    12px do topo e right de 0, para deixamos encostado na direita.
+
+    deixamos ela flex, para deixar a lista de icones em linhas, 
+*/
 .social{
+    display: flex;
     position: absolute;
     top: 12px;
     right: 0;
 }
 
+/*
+    nessas class, pegamos os elementos e damos um espaço do lado externo dele de 25px.
+*/
 .social li{
-    float: left;
-    margin-left: 25px;
+    margin-right: 25px;
 }
 
+/*
+    aqui vamos colocar o tamanho dos icones
+*/
 .social a{
-    /*tamanho da imagem*/
     height: 32px;
     width: 32px;
     display: block;
     text-indent: -9999px;
 }
 
+/*
+    aqui vamos adcionar as fotos das redes sociais
+*/
 .social a[href*="facebook.com"]{
     background-image: url(../img/facebook.png);
 }
@@ -289,4 +315,24 @@ footer .container{
 
 .social a[href*="google.com"]{
     background-image: url(../img/googleplus.png);
+}
+
+/*
+    Aqui vamos adicionar uma subclass na parte das categorias.
+*/
+
+.menu-departamento li ul{
+    display: none;
+}
+
+.menu-departamento li:hover ul{
+    display: block;
+}
+
+.menu-departamento ul ul li{
+    background-color: #DCDCDC;
+}
+
+.menu-departamento li li a::before{
+    content: '- ';
 }
