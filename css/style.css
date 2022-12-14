@@ -1,3 +1,8 @@
+/*
+    deixa o corpo da minha pagina com os textos de uma determinada cor
+    escolho uma fonte para o corpo da pagina, e deixo a margin auto para centralizar 
+    todas as marcacões feitas em html.
+*/
 body{
     color: #333333;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -6,34 +11,63 @@ body{
     width: 940px;
 }
 
+/*
+    Aqui deixa o h1 da minha section da pagina sobre com um fundo e um padding de 10px.
+*/
 #logo-sobre{
     background-color: #c2b0b0;
     padding: 10px;
 }
+
+/*
+    nessa estilização, deixo o h2 com margin top, que da um espaço na parte de cima,
+    e coloco um aborda na parte de baixo do me h2 de historias
+*/
 
 #historia{
     margin-top: 30px;
     border-bottom:2px solid #333333;
 }
 
+/*
+    nessa parte eu deixo todos da minha pagina sobre com uma estilização, essa tem
+    uma margin de todos os lados de 10px, com um espaçamento por dentro(padding) de 0 45px
+    e deixo ele formatado com o text-align: justify.
+*/
 .paragrafo-sobre{
     margin: 10px;
     padding: 0 45px;
     text-align: justify;
 }
 
+/*
+    Aqui vamos centralizar a foto onde mostra o centro de distribuição, essa centralização
+    fazemos com o maring-left e margin-right deixando os dois em auto, e definimos um largura para
+    ele, com o width.
+*/
 #centro-distribuicao{
     margin-left: auto;
     margin-right: auto;
     width: 550px;
 }
 
+/*
+    mais uma estilização de titúlo, nessa colocamos maring-bottom, que é uma marin em baixo do titúlo
+    e espaço na parte de cima tambem, com o margin-top, além de colocar uma bordar só na parte de baixo
+    com o border-bottom: 2px solid black, grossura de 2px solida e de cor preta.
+*/
 #diferenciais{
     margin-bottom: 10px;
     margin-top: 30px;
     border-bottom: 2px solid black;
 }
 
+/*
+    Aqui tem mais uma estilização nas fotos da pagina sobre, que colocamos um espaçamento com um padding
+    e espaçamento por fora da imagem com o margin, mudamos a cor de fundo tambem, com o background-color
+    colocamos uma borda por todos os lados, de 1px solida e com uma determinada cor, e centralizamos o conteúdo
+    com text-aling: center.
+*/
 .img-sobre{
     padding: 15px;
     margin: 30px;
@@ -42,28 +76,36 @@ body{
     text-align: center;
 }
 
+/*
+    Esse figcaption serve para colocar titúlo na imagem, e nele estilizamos da seguinte forma
+    uma margin só no topo, de 10px, e mudamos a font, deixamos italic.
+*/
 figcaption{
     margin-top: 10px;
     font-style: italic;
 }
 
-#familia-pelho{
+/*
+    nessa class, que é uma imagem da minha pagina sobre, nela, a gente coloca ela flutuando do lado
+    direito, e determinamos uma margin para ela, margin é espaçamento por fora
+*/
+.familia-pelho{
     float: right;
     margin: 0 0 10px 10px;
 }
 
-#rodape{
-    color: #777;
-    margin: 30px 0;
-    padding: 30px 0; 
-}
+/*Estilização da pagina index*/
 
-#rodape img{
-    margin-right: 30px;
-    vertical-align: middle;
-    width: 94px;
-}
+/*
+    nessa estilização, nos deixamos a posição do nosso paragrafo absoluta, para podermos mover para o lado
+    direito, top 0 diz que queremos colocar no canto e right 0 diz que queremos na direita.
 
+    além de colocarmos uma foto no paragráfo, com o background-imagem, o background-repeat, diz para não preencher o paragráfo todo
+    o background-position diz para colocar a foto na direita.
+
+    nessa mesma classe, aumentamos a font e deixamos um espaçamento interno na direita com o padding-right para dar espaço para a foto
+    ainda formatamos o texto com para ficar a direita com o text-align e definimos uma lagura com o width.
+*/
 .sacola{
     position: absolute;
     top: 0;
