@@ -166,7 +166,7 @@ figcaption{
 }
 
 .busca,
-.menu-departamento{
+.menu-departamentos{
     background-color: #dcdcdc;
     font-weight: bold;
     text-transform: uppercase;
@@ -178,22 +178,22 @@ figcaption{
 
 .busca h2,
 .busca form,
-.menu-departamento h2{
+.menu-departamentos h2{
     margin: 10px;
 }
 
-.menu-departamento li{
+.menu-departamentos li{
     background-color: white;
     margin-bottom: 1px;
     padding: 5px 10px;
 }
 
-.menu-departamento a{
+.menu-departamentos a{
     color: #333333;
     text-decoration: none;
 }
 
-.menu-departamento{
+.menu-departamentos{
     clear: left;
 }
 
@@ -207,21 +207,37 @@ figcaption{
     margin-top: 10px;
 }
 
-.menu-departamento{
+.menu-departamentos{
     margin-top: 10px;
     padding-bottom: 10px;
 }
 
+/*
+    nas classes novidades e mais vendidos, eu deixo o fundo de uma determinada cor
+    com o background-color e deixo uma flutuando para a esquerda e outra para a direita com[
+    float left ou right, coloco tambem um degrader nesses paineis, com o background
+    linear gradient onde passo duas cores para usaur como degrader.
+*/
 .novidades{
     background-color: #f5dcdc;
     float: left;
+    background: linear-gradient(#F5DCDC, #BEBEF4);
 }
 .mais-vendidos{
+    background: linear-gradient(#DCDCF5, #F4BEBE);
     background-color: #dcdcf5;
     float: right;
 }
 
+/*
+    nesse painel, eu deixo os cantos a arredondados com o border-radius, e
+    coloco sombra dentro com o box-shadow e passo o tamanho da sombra e a cor,
+    alem de determinar um espaçamento por fora do painel e um espaçamento por dentro
+    do painel, coloco tambem a largura do painel com o width.
+*/
 .painel{
+    border-radius: 4px;
+    box-shadow: inset 1px 1px 4px #999;
     margin: 10px 0;
     padding: 10px;
     width: 445px;
@@ -232,6 +248,7 @@ figcaption{
     font-weight: bold;
     text-transform: uppercase;
 
+    text-shadow: 3px 3px 2px #fff;
     margin-bottom: 10px;
 }
 
@@ -246,8 +263,15 @@ figcaption{
     display: inline-block;
     vertical-align: top;
     width: 140px;
+    background-color: white;
     margin: 2px;
     padding-bottom: 10px;
+}
+
+.painel li:hover{
+    transform: scale(1.2) rotate(-5deg);
+    box-shadow: 0 0 5px #333;
+    transition: 0.7s ease-in;
 }
 
 /*estilizando o footer*/
@@ -279,7 +303,6 @@ footer .container{
     deixamos ela flex, para deixar a lista de icones em linhas, 
 */
 .social{
-    display: flex;
     position: absolute;
     top: 12px;
     right: 0;
@@ -289,6 +312,7 @@ footer .container{
     nessas class, pegamos os elementos e damos um espaço do lado externo dele de 25px.
 */
 .social li{
+    float: left;
     margin-right: 25px;
 }
 
@@ -318,21 +342,80 @@ footer .container{
 }
 
 /*
-    Aqui vamos adicionar uma subclass na parte das categorias.
+    Aqui vamos adicionar uma subclass na parte das categorias. 
+    e nessa subclass, vamos deixar ela invisivel com o display none.
 */
-
-.menu-departamento li ul{
+.menu-departamentos li ul{
     display: none;
 }
 
-.menu-departamento li:hover ul{
+/*
+    aqui vamos colocar uma animação, de quanto passarmos o mouse, a subclass deixar de ser 
+    none para ser block, fazemos isso com a pseudoclass hover e deixamos ela com o display block
+*/
+.menu-departamentos li:hover ul{
     display: block;
 }
 
-.menu-departamento ul ul li{
+/*
+    nessa parte vamos selecionar a subclass de departamentos e colocarmos um fundo de uma cor
+*/
+.menu-departamentos ul ul li{
     background-color: #DCDCDC;
 }
 
-.menu-departamento li li a::before{
+/*
+    mais uma vez usando a peseudoclass before, usamos ela para colocarmos coisas antes de algum elemento
+    e como parametro, passamos o content e mandamos oque queremos colocar antes do elemento.
+*/
+.menu-departamentos li li a::before{
     content: '- ';
+}
+
+@media (max-width: 320px){
+
+    .container{
+        width: 96%;
+    }
+
+    header h1{
+        text-align: center;
+    }
+
+    header h1 img{
+        max-width: 50%;
+    }
+
+    .sacola {
+        display: none;
+    }
+
+    .menu-opcoes{
+        position: static;
+        text-align: center;
+    }
+
+    .menu-opcoes ul li {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .busca,
+    .menu-departamentos,
+    .banner-destaque img{
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .painel{
+        width: auto;
+    }
+
+    .painel li{
+        width: 30%;
+    }
+
+    .painel img{
+        width: 100%;
+    }
 }
