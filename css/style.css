@@ -372,7 +372,11 @@ footer .container{
     content: '- ';
 }
 
-@media (max-width: 320px){
+@media screen and (max-width: 450px){
+
+    body{
+        width: auto;
+    }
 
     .container{
         width: 96%;
